@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lauren Haile - Principal Product Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: #421d24;
+            background: #fcfaf7;
+            min-height: 100vh;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(252, 250, 247, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(133, 125, 250, 0.1);
+            z-index: 1000;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #421d24;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #421d24;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #857dfa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8em;
+            margin-bottom: 40px;
+            font-weight: 600;
+            color: #421d24;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: #421d24;
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: #857dfa;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        .hero {
+            padding-top: 140px;
+            padding-bottom: 100px;
+            position: relative;
+        }
+
+        .location-badge {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1em;
+            color: #421d24;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 60px;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero-text {
+            text-align: left;
+        }
+
+        .hero-text h1 {
+            font-size: 5em;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+
+        .hero-text .spark {
+            color: #b8b0ff;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .profile-photo {
+            position: relative;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 500px;
+            border-radius: 1rem;
+            object-fit: cover;
+            box-shadow: 0 20px 60px rgba(133, 125, 250, 0.2);
+        }
+
+        .placeholder-text {
+            background: #d4c7ff;
+            border: 2px dashed #857dfa;
+            border-radius: 0.5rem;
+            padding: 20px;
+            margin: 20px 0;
+            color: #421d24;
+            font-size: 0.9em;
+            text-align: center;
+        }
+
+        .about-section {
+            background: white;
+            border-radius: 0.5rem;
+            padding: 50px;
+            margin: 40px 0;
+            box-shadow: 0 10px 40px rgba(66, 29, 36, 0.05);
+        }
+
+        .about-section p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 35px;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px rgba(66, 29, 36, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(133, 125, 250, 0.2);
+        }
+
+        .info-card h3 {
+            color: #857dfa;
+            margin-bottom: 15px;
+        }
+
+        .info-card p {
+            color: #421d24;
+            line-height: 1.7;
+        }
+
+        .info-card .date {
+            color: #857dfa;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .highlight {
+            background: #f5f3ff;
+            padding: 30px;
+            border-radius: 0.5rem;
+            margin-top: 30px;
+            border-left: 4px solid #857dfa;
+        }
+
+        .highlight h3 {
+            color: #857dfa;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #857dfa;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 50px 0;
+            text-align: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .stat {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5em;
+            color: #857dfa;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            color: #421d24;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .photo-gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(66, 29, 36, 0.1);
+        }
+
+        .photo-gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(133, 125, 250, 0.3);
+        }
+
+        .social-links {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .social-links h2 {
+            margin-bottom: 30px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 15px;
+            padding: 15px 35px;
+            background: #857dfa;
+            color: white;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .social-links a:hover {
+            background: #6b5dd3;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(133, 125, 250, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            background: white;
+            color: #421d24;
+            font-size: 0.9em;
+            border-top: 1px solid rgba(133, 125, 250, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            .container, nav .container {
+                padding: 0 20px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5em;
+            }
+
+            .profile-photo img {
+                height: 400px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9em;
+            }
+
+            .about-section {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">LH</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#interests">Interests</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="location-badge">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                Atlanta, GA
+            </div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Crafting products that <span class="spark">spark joy</span></h1>
+                    <p class="subtitle">Product Manager at Superhuman, building tools that help people work smarter and reclaim their time.</p>
+                </div>
+                <div class="profile-photo">
+                    <img src="SA1.jpeg" alt="Lauren Haile Profile Photo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About</h2>
+            <div class="about-section">
+                <p>I'm a seasoned product management professional based in Atlanta, Georgia. Currently serving as Principal Product Manager at Superhuman Mail, I bring extensive experience in building and scaling innovative SaaS products.</p>
+                <p>With a strong engineering background from Georgia Tech and expertise in launching new-to-market tools, I focus on creating products that solve real problems for users while driving business growth.</p>
+            </div>
+
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">2K+</div>
+                    <div class="stat-label">LinkedIn Followers</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Professional Connections</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" style="background: white;">
+        <div class="container">
+            <h2>Professional Experience</h2>
+
+            <div class="highlight">
+                <h3>Principal Product Manager</h3>
+                <p><strong>Superhuman</strong></p>
+                <p class="date">2023–Present</p>
+                <p>Developing product strategy and shipping features to make email collaborative.</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Senior Product Manager</h3>
+                    <p><strong>Calendly</strong></p>
+                    <p class="date">2020–2023</p>
+                    <p>Led scheduling automation initiatives and worked across enterprise and SMB customer segments to boost engagement.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Senior Product Manager</h3>
+                    <p><strong>Sharecare & Share Labs</strong></p>
+                    <p class="date">2017–2020</p>
+                    <p>Managed health and wellness product development, drove outcomes through data-informed strategies, and launched innovative healthcare scheduling solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Georgia Institute of Technology</h3>
+                    <p><strong>Master of Science (MS), Industrial Engineering</strong></p>
+                    <p class="date">2009 - 2010</p>
+                    <p>Healthcare specific Industrial Engineering Masters program</p>
+                </div>
+                <div class="info-card">
+                    <h3>Marquette University</h3>
+                    <p><strong>Bachelor of Science (BS), Biomedical Engineering</strong></p>
+                    <p class="date">2004 - 2009</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="interests" style="background: white;">
+        <div class="container">
+            <h2>Hobbies & Interests</h2>
+            <p style="font-size: 1.2em; margin-bottom: 40px;">Outside of work, I'm passionate about creativity, adventure, and making things with my own hands.</p>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>🌎 Adventuring & Travel</h3>
+                    <p>Passionate about exploring new places and experiencing different cultures around the world.</p>
+                </div>
+                <div class="info-card">
+                    <h3>✂️ DIY Projects</h3>
+                    <p>Love hands-on projects and building things from scratch.</p>
+                </div>
+                <div class="info-card">
+                    <h3>🍰 Cooking & Baking</h3>
+                    <p>Enjoy experimenting with new recipes and creating delicious treats in the kitchen.</p>
+                </div>
+                <div class="info-card">
+                    <h3>🍽️ Trying New Restaurants</h3>
+                    <p>Love exploring Atlanta's diverse culinary scene and discovering new favorite spots.</p>
+                </div>
+                <div class="info-card">
+                    <h3>🍑 Atlanta Life</h3>
+                    <p>Proud Atlanta resident exploring everything the city has to offer.</p>
+                </div>
+                <div class="info-card">
+                    <h3>🐈 Cat Lover</h3>
+                    <p>Devoted cat parent cherishing time with feline companions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <div class="container">
+            <h2>Photo Gallery</h2>
+            <p style="font-size: 1.2em; margin-bottom: 20px;">A glimpse into my adventures, creative projects, and life in Atlanta.</p>
+            <div class="photo-gallery">
+                <img src="travel1.jpg" alt="Travel Adventure">
+                <img src="scuba1.JPG" alt="Scuba Diving">
+                <img src="baking1.jpeg" alt="Baking Creation">
+                <img src="restaurants1.JPG" alt="Restaurant Experience">
+                <img src="making1.JPEG" alt="DIY Project">
+                <img src="NYC1.jpeg" alt="New York City">
+                <img src="IMG_4810.jpeg" alt="Adventure Photo">
+                <img src="halloween.jpeg" alt="Halloween">
+                <img src="P1122621.jpeg" alt="Photo Memory">
+                <img src="P1122765 2.jpeg" alt="Photo Memory">
+                <img src="P1144430.jpeg" alt="Photo Memory">
+                <img src="P1144589 2.jpeg" alt="Photo Memory">
+                <img src="P1155781.jpeg" alt="Photo Memory">
+                <img src="P1166142 2.jpeg" alt="Photo Memory">
+                <img src="SA2.jpeg" alt="Personal Photo">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="social-links" style="background: white;">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <a href="https://www.linkedin.com/in/lhaile7" target="_blank">LinkedIn</a>
+            <a href="https://www.instagram.com/lcfire/" target="_blank">Instagram</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>📍 Atlanta, Georgia, United States</p>
+        <p style="margin-top: 10px; opacity: 0.7;">Information compiled from public sources - January 2026</p>
+    </footer>
+</body>
+</html>
